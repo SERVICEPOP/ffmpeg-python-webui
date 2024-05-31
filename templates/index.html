@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFmpeg Web UI</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">FFmpeg Web UI</h1>
+        
+        <!-- Scale Video Form -->
+        <div class="card mb-4">
+            <div class="card-header">Scale Video</div>
+            <div class="card-body">
+                <form action="/scale_video" method="post">
+                    <div class="form-group">
+                        <label for="input_file">Input File</label>
+                        <input type="text" class="form-control" id="input_file" name="input_file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resolution">Resolution</label>
+                        <input type="text" class="form-control" id="resolution" name="resolution" placeholder="1920:1080">
+                    </div>
+                    <div class="form-group">
+                        <label for="output_file">Output File</label>
+                        <input type="text" class="form-control" id="output_file" name="output_file" placeholder="out.mp4">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Scale Video</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Set Aspect Ratio Form -->
+        <div class="card mb-4">
+            <div class="card-header">Set Aspect Ratio</div>
+            <div class="card-body">
+                <form action="/set_aspect_ratio" method="post">
+                    <div class="form-group">
+                        <label for="input_file">Input File</label>
+                        <input type="text" class="form-control" id="input_file" name="input_file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="aspect_ratio">Aspect Ratio</label>
+                        <input type="text" class="form-control" id="aspect_ratio" name="aspect_ratio" placeholder="16/9">
+                    </div>
+                    <div class="form-group">
+                        <label for="output_file">Output File</label>
+                        <input type="text" class="form-control" id="output_file" name="output_file" placeholder="out.mp4">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Set Aspect Ratio</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Reverse Video Form -->
+        <div class="card mb-4">
+            <div class="card-header">Reverse Video</div>
+            <div class="card-body">
+                <form action="/reverse_video" method="post">
+                    <div class="form-group">
+                        <label for="input_file">Input File</label>
+                        <input type="text" class="form-control" id="input_file" name="input_file" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reverse Video</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Concatenate Videos Form -->
+        <div class="card mb-4">
+            <div class="card-header">Concatenate Videos</div>
+            <div class="card-body">
+                <form action="/concatenate_videos" method="post">
+                    <div class="form-group">
+                        <label for="input_file">Input File</label>
+                        <input type="text" class="form-control" id="input_file" name="input_file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="music_file">Music File</label>
+                        <input type="text" class="form-control" id="
